@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            .switchery {
+                background-color: #fff;
+                border: 1px solid #dfdfdf;
+                border-radius: 20px;
+                cursor: pointer;
+                display: inline-block;
+                height: 30px;
+                position: relative;
+                vertical-align: middle;
+                width: 50px;
+
+                -webkit-box-sizing: content-box;
+                -moz-box-sizing: content-box;
+                box-sizing: content-box;
+            }
+
+            .switchery > small {
+                background: #fff;
+                border-radius: 100%;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+                height: 30px;
+                position: absolute;
+                top: 0;
+                width: 30px;
+            }
+            .prize-content{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="input pull-left">
+            <input type="checkbox" class="js-switch" data-switchery="true" style="display: none;">
+        </div>
+        <div class="prize-content">
+            <p>啦啦啦啦哈哈哈哈</p>
+        </div>
+    </body>
+    <script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="switchery.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        var elem = document.querySelector('.js-switch');
+        var $prizeContent = $('.prize-content');
+        var init = new Switchery(elem);
+        elem.onchange = function() {
+            elem.checked ? $prizeContent.slideDown('fast') : $prizeContent.slideUp('fast');
+        };
+    });
+    </script>
+</html>
